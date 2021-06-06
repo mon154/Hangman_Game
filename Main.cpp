@@ -98,7 +98,7 @@ class Player {
                 cout << "|     O \n";
                 cout << "|    -|- \n";
                 cout << "|    / \ \n";
-                cout << "|/n";
+                cout << "|\n";
                 cout << "----";
                 cout << endl;
             }
