@@ -8,7 +8,7 @@
 using namespace std;
 
 //sets the number of possible incorrect guesses
-int totalLives = 7;
+int totalLives = 6;
 
 // creates the player class that keeps track of the player's lives 
 class Player {
@@ -25,7 +25,7 @@ class Player {
     }
         // draws the hangman based on how many lives the player has left
         void drawHangman(int lives) {
-            if (lives == 7) {
+            if (lives == 6) {
                 cout << endl;
                 cout << "-------\n";
                 cout << "|     |\n";
@@ -36,23 +36,12 @@ class Player {
                 cout << "----";
                 cout << endl; 
             }
-            else if (lives == 6) {
-                cout << endl;
-                cout << "-------\n";
-                cout << "|     |\n";
-                cout << "|     O\n";
-                cout << "|\n";
-                cout << "|\n";
-                cout << "|\n";
-                cout << "----";
-                cout << endl;
-            }
             else if (lives == 5) {
                 cout << endl;
                 cout << "-------\n";
                 cout << "|     |\n";
                 cout << "|     O\n";
-                cout << "|     |\n";
+                cout << "|\n";
                 cout << "|\n";
                 cout << "|\n";
                 cout << "----";
@@ -61,9 +50,9 @@ class Player {
             else if (lives == 4) {
                 cout << endl;
                 cout << "-------\n";
-                cout << "|     | \n";
-                cout << "|     O \n";
-                cout << "|    -| \n";
+                cout << "|     |\n";
+                cout << "|     O\n";
+                cout << "|     |\n";
                 cout << "|\n";
                 cout << "|\n";
                 cout << "----";
@@ -74,13 +63,24 @@ class Player {
                 cout << "-------\n";
                 cout << "|     | \n";
                 cout << "|     O \n";
-                cout << "|    -|- \n";
+                cout << "|    -| \n";
                 cout << "|\n";
                 cout << "|\n";
                 cout << "----";
                 cout << endl;
             }
             else if (lives == 2) {
+                cout << endl;
+                cout << "-------\n";
+                cout << "|     | \n";
+                cout << "|     O \n";
+                cout << "|    -|- \n";
+                cout << "|\n";
+                cout << "|\n";
+                cout << "----";
+                cout << endl;
+            }
+            else if (lives == 1) {
                 cout << endl;
                 cout << "-------\n";
                 cout << "|     | \n";
@@ -97,8 +97,8 @@ class Player {
                 cout << "|     | \n";
                 cout << "|     O \n";
                 cout << "|    -|- \n";
-                cout << "|    / \ \n";
-                cout << "|\n";
+                cout << "|    | | ";
+                cout << "\n|\n";
                 cout << "----";
                 cout << endl;
             }
@@ -169,7 +169,6 @@ int main()
 
         // checks if the letter is in the word and subtracts from lives if letter is not in word
         int matches = letterGuess(letter, word, unknown);
-        cout << matches;
         if (matches == 0) {
             cout << "\nThis letter isn't in the word\n";
             lostLives++;
@@ -182,7 +181,9 @@ int main()
         }
         // displays the win message
         if (word == unknown)
-        {
+        {   
+            player1.drawHangman(player1.getLives());
+            cout << "\n\n" << unknown<< "\n\n";
             cout << "Congrats! You guessed the word!\n";
             cout << "The word was : " << word << endl;
             break;
@@ -190,7 +191,9 @@ int main()
     }
     //displays the lose message
     if (player1.getLives() == 0)
-    {
+    {   
+        player1.drawHangman(player1.getLives());
+        cout << "\n";
         cout << "\nSorry, you've been hanged.\n";
         cout << "The word was : " << word << endl;
     }

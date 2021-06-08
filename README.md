@@ -3,7 +3,8 @@
 I wanted to learn C++ so I made a small hangman game. It was my first time doing a Hangman Game so I did start by finding [this](http://www.cppforschool.com/project/hangman-game-code.html) tutorial to help me get started on the basic game logic.
 However, I added in the capability to pull words from a file instead of an in code array, I made it so it didn't punish you for guessing the same letter twice, I used a class to keep track of the number of lives the player had as well as made a function that would draw the hangman.'
 
-YouTube Demo Still in Progress:
+### YouTube Demo Video
+[YouTube Demo](https://youtu.be/V4fJjf-K6oI)
 
 
 # Development Environment
